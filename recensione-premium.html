@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Recensioni Ufficiali Prodotti Premium</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#f4f4f4;
+    text-align:center;
+}
+
+.header{
+    background:white;
+    padding:20px;
+    box-shadow:0 2px 10px gray;
+}
+
+.hero img{
+    width:300px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.container{
+    width:600px;
+    margin:auto;
+}
+
+.review{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 8px gray;
+}
+
+.stars span{
+    font-size:30px;
+    cursor:pointer;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#loading{
+    display:none;
+    margin-top:20px;
+    font-size:20px;
+}
+
+.bar{
+    width:0%;
+    height:20px;
+    background:green;
+}
+
+.progress{
+    width:100%;
+    background:#ddd;
+    margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>⭐ Sistema Recensioni Certificate</h1>
+<p>Lascia una recensione verificata</p>
+</div>
+
+<div class="hero">
+<img src="elisa.jpeg">
+<p><b>Responsabile Qualità Recensioni</b></p>
+</div>
+
+<div class="container">
+
+<h2>Prodotti recensiti oggi</h2>
+
+<div class="review">
+<b>Stampante UltraJet 3000</b><br>
+"Stampa solo quando ha voglia ma crea carattere."
+</div>
+
+<div class="review">
+<b>Forchetta Smart WiFi</b><br>
+"Si connette al router ma non al cibo."
+</div>
+
+<div class="review">
+<b>Cuscino Ergonomico Motivazionale</b><br>
+"Non dormo meglio ma mi giudica meno."
+</div>
+
+<div class="review">
+<b>Frullatore Filosofico</b><br>
+"Non frulla. Riflette."
+</div>
+
+<div class="review">
+<b>Orologio Esistenziale</b><br>
+"Segna sempre l'ora sbagliata, come la mia vita."
+</div>
+
+<h2>Lascia la tua recensione ⭐⭐⭐⭐⭐</h2>
+
+<div class="stars">
+<span onclick="rate()">⭐</span>
+<span onclick="rate()">⭐</span>
+<span onclick="rate()">⭐</span>
+<span onclick="rate()">⭐</span>
+<span onclick="rate()">⭐</span>
+</div>
+
+<br>
+
+<button onclick="sendReview()">Invia recensione</button>
+
+<div id="loading">
+<p>Invio recensione ai server europei...</p>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function rate(){
+    alert("Grazie per aver scelto 5 stelle obbligatorie.");
+}
+
+function sendReview(){
+
+document.getElementById("loading").style.display="block";
+
+let width=0;
+let bar=document.getElementById("bar");
+
+let interval=setInterval(function(){
+
+    width+=5;
+    bar.style.width=width+"%";
+
+    if(width>=100){
+        clearInterval(interval);
+
+        alert("Recensione certificata con successo ✅");
+
+        window.location.href="https://www.youtube.com/watch?v=yCIcPPyxokc";
+    }
+
+},120);
+
+}
+
+</script>
+
+</body>
+</html>
